@@ -57,7 +57,6 @@ class LinkStack {
             return p;
         }
     }
-
 }
 
 
