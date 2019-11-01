@@ -27,5 +27,37 @@ class ArrayStack {
 
 let the_stack = new ArrayStack(3);
 
+class Node {
+    constructor (data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 // 链式栈
+class LinkStack {
+    constructor () {
+        this.top = null;
+    }
+    push (value) {
+        let newNode = new Node(value);
+        if (this.top === null) {
+            // zhan 是空的
+            this.top = newNode;
+        } else {
+            newNode.next = this.top;
+            this.top = newNode;
+        }
+    }
+    pop () {
+        if (this.top === null) {
+            return -1;
+        } else {
+            let p = this.top;
+            this.top = this.top.next;
+            return p;
+        }
+    }
+
+}
+
 
